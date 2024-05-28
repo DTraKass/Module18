@@ -26,8 +26,10 @@ namespace Module18
                 Console.WriteLine("Введите ссылку на видео");
                 string url = Console.ReadLine();
 
+                Console.WriteLine("Получаем информацию о видео...");
                 var info = client.Videos.GetAsync(url);
 
+                Console.WriteLine("Скачиваем видео...");
                 await client.Videos.DownloadAsync(url, filePath, builder => builder.SetPreset(ConversionPreset.UltraFast));
 
                 Console.WriteLine($"Информация о видео: {info}");
