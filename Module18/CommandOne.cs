@@ -18,6 +18,8 @@ namespace Module18
         {
             try
             {
+                receiver.Operation();
+
                 Console.WriteLine("Введите путь для скачивания видео");
                 string filePath = Console.ReadLine();
 
@@ -30,10 +32,10 @@ namespace Module18
 
                 Console.WriteLine($"Информация о видео: {info}");
 
-                receiver.Operation();
             }catch(Exception ex)
             {
                 Console.WriteLine(ex);
+                Console.WriteLine("Ошибка!");
             }
         }
     }
